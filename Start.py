@@ -7,8 +7,8 @@ you choose how long you play, or to quit, which closes the game.
 import Pick
 class Start():
     def __init__(self,tk,root):
-        self.tk = tk
-        self.root = root
+        self.tk = tk # Argument that allows labels and canvas to be built
+        self.root = root # Argument that allows the labels and canvas to appear on the screen
         self.canvas = None
 
     def on_click_start(self,event):
@@ -40,3 +40,4 @@ class Start():
         exit_label.bind('<Button-1>',self.on_click_exit) # When the exit label is clicked, on_click_exit runs and the game ends
 
         self.root.bind('<Escape>',self.esc_exit) # When escape key is pressed, the player leaves the game
+
