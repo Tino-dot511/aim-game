@@ -7,9 +7,9 @@ transitioning to the game aspect with the squares.
 import Square
 class Pick():
     def __init__(self,tk,root):
-        self.tk = tk
-        self.root = root
-        self.canvas = None
+        self.tk = tk # Argument that allows labels and canvas to be built
+        self.root = root # Argument that allows the labels and canvas to appear on the screen
+        self.canvas = None # Initializing value so it can be used throughout the class
         self.seconds = None
 
     def check_type(self,value,type):
@@ -50,6 +50,7 @@ class Pick():
         enter_sec.bind('<Return>',lambda event:self.on_enter_seconds(event,enter_sec)) # When the enter key is pressed, it will access the on_enter_seconds function
 
         self.root.bind('<Escape>',self.esc_exit) # When escape key is pressed, the player leaves the game
+
 
 
 
