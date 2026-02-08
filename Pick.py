@@ -1,5 +1,5 @@
 '''
-This class displays is used to display an input screen to choose the amount of seconds
+This class is used to display an input screen to choose the amount of seconds
 you play the game for, validate the input so that it can be used in the square class, as well as 
 transitioning to the game aspect with the squares.
 '''
@@ -50,4 +50,5 @@ class Pick():
         enter_sec.bind('<Return>',lambda event:self.on_enter_seconds(event,enter_sec))# When the enter key is pressed, it will access the on_enter_seconds function
 
         self.root.bind('<Escape>',self.esc_exit)# Escape button to leave the game early
+
 
