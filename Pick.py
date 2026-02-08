@@ -25,10 +25,10 @@ class Pick():
             # Gets the input entered by the player to check if it is a number to then be used as an argument in the square class.
             self.seconds =  enter_sec.get()
             if self.check_type(self.seconds,float):
-                self.root.unbind('<Escape>')
-                enter_sec.config(state='disabled')
+                self.root.unbind('<Escape>') # Unbinds the escape key so it can't be used 
+                enter_sec.config(state='disabled') # Disables the entry box so input can't be changed
                 self.canvas.destroy()
-                game_screen = Square.Square(self.tk,self.root,self.seconds)
+                game_screen = Square.Square(self.tk,self.root,self.seconds) # Leads into the game
                 game_screen.game_screen()
             else:
                 # Displays a message to try again if the input by the player isn't a number
@@ -39,16 +39,17 @@ class Pick():
         self.root.destroy()
 
     def pick_screen(self):
-        self.canvas = self.tk.Canvas(self.root)
+        self.canvas = self.tk.Canvas(self.root) # Creates canvas to place label and input for choosing how long the player plays
         self.canvas.pack(fill=self.tk.BOTH, expand=True)
         time_label = self.tk.Label(self.canvas,text='How many seconds would you like to play?', font=('Arial',20), fg='black')
         time_label.place(x = (self.root.winfo_screenwidth()/2)-250, y = (self.root.winfo_screenheight()/3))
-        enter_sec = self.tk.Entry(self.canvas,font=('Arial',20))# The box used by the player to input an amount of seconds
+        enter_sec = self.tk.Entry(self.canvas,font=('Arial',20)) # The box used by the player to input an amount of seconds
         enter_sec.place(x = (self.root.winfo_screenwidth()/2)-150, y = (self.root.winfo_screenheight()/2))
         label_esc = self.tk.Label(self.canvas,text=' press esc to leave', font=('Arial',12), fg='white',bg='black')
         label_esc.place(x = 0,y = self.root.winfo_screenheight() - 20)
-        enter_sec.bind('<Return>',lambda event:self.on_enter_seconds(event,enter_sec))# When the enter key is pressed, it will access the on_enter_seconds function
+        enter_sec.bind('<Return>',lambda event:self.on_enter_seconds(event,enter_sec)) # When the enter key is pressed, it will access the on_enter_seconds function
 
-        self.root.bind('<Escape>',self.esc_exit)# Escape button to leave the game early
+        self.root.bind('<Escape>',self.esc_exit) # When escape key is pressed, the player leaves the game
+
 
 
