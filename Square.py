@@ -8,10 +8,10 @@ import time
 import random as ran
 class Square():
     def __init__(self,tk,root,time):
-        self.tk = tk
-        self.root = root
-        self.tim = time
-        self.canvas = None
+        self.tk = tk # Argument that allows labels and canvas to be built
+        self.root = root # Argument that allows the labels and canvas to appear on the screen
+        self.tim = time # Argument that sets how long the game lasts
+        self.canvas = None # Initializing value so it can be used throughout the class
         self.stopwatch_start = None
         self.dict = {} # Dictionary of square with their coordinates
         self.lst = [] # List to save coordinates
@@ -121,3 +121,4 @@ class Square():
         self.stop_watch() # Runs the function in background to check how long the game goes
 
         
+
