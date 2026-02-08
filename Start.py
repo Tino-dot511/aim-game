@@ -9,7 +9,7 @@ class Start():
     def __init__(self,tk,root):
         self.tk = tk # Argument that allows labels and canvas to be built
         self.root = root # Argument that allows the labels and canvas to appear on the screen
-        self.canvas = None
+        self.canvas = None # Initializing value so it can be used throughout the class
 
     def on_click_start(self,event):
         self.root.unbind('<Escape>') # Unbinds the escape key so it can't be used
@@ -40,4 +40,5 @@ class Start():
         exit_label.bind('<Button-1>',self.on_click_exit) # When the exit label is clicked, on_click_exit runs and the game ends
 
         self.root.bind('<Escape>',self.esc_exit) # When escape key is pressed, the player leaves the game
+
 
