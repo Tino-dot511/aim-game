@@ -1,3 +1,5 @@
+#This class is used to display the amount of seconds you choose to play the game for.
+
 import Square
 class Pick():
     def __init__(self,tk,root):
@@ -25,8 +27,6 @@ class Pick():
                  try_again = self.tk.Label(self.canvas,text='Please put in a number', font=('Arial',20), fg='black')
                  try_again.place(x = (self.root.winfo_screenwidth()/2)-150, y = (self.root.winfo_screenheight()/4))
             
-
-
     def esc_exit(self,event):
         self.root.destroy()
 
@@ -40,4 +40,5 @@ class Pick():
         label_esc = self.tk.Label(self.canvas,text=' press esc to leave', font=('Arial',12), fg='white',bg='black')
         label_esc.place(x = 0,y = self.root.winfo_screenheight() - 20)
         enter_sec.bind('<Return>',lambda event:self.on_enter_seconds(event,enter_sec))
+
         self.root.bind('<Escape>',self.esc_exit)
