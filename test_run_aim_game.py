@@ -10,3 +10,5 @@ root.attributes('-fullscreen', True) # Allows for the game to be in fullscreen t
 start_game = Start.Start(tk,root) 
 
 start_game.start_screen() # Starts the game
+root.mainloop()
+
