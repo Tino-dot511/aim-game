@@ -20,7 +20,6 @@ class Square():
     def hits_or_not(self,x,y):
         # Checks if squares were hit
         list_copy = self.lst.copy()
-        print(self.lst)
         for i in range(len(list_copy)):
             if (x >= self.lst[i][1] and x <= self.lst[i][1]+50) and (y >= self.lst[i][2] and y <= self.lst[i][2]+50):
                 # If a square is hit
@@ -123,3 +122,4 @@ class Square():
         self.canvas.bind('<Button-1>',self.on_click) # If the left-click button is clicked, the on_click function will run
         self.root.bind('<Escape>',self.esc_exit) # When escape key is pressed, the player leaves the game
         self.stop_watch() # Runs the function in background to check how long the game goes
+
